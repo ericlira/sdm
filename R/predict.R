@@ -372,11 +372,11 @@ setMethod('predict', signature(object='sdmModels'),
             if (inherits(b,'Raster')) {
               if (nr > 1) {
                 b <- brick(b,nl=nr)
-                writeRaster(b,filename=filename,overwrite=overwrite)
+                writeRaster(b,filename=filename,overwrite=overwrite, ...)
                 b <- brick(filename)
               } else {
                 b <- raster(b)
-                writeRaster(b,filename=filename,overwrite=overwrite)
+                writeRaster(b,filename=filename,overwrite=overwrite, ...)
                 b <- raster(filename)
               }
               
